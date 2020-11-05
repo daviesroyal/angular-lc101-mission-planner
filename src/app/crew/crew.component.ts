@@ -19,7 +19,13 @@ export class CrewComponent implements OnInit {
   }
 
   add(memberName: string, isFirst: boolean) {
-    this.crew.push({name: memberName, firstMission: isFirst});
+    let crewNames = [];
+    for (let i = 0; i < this.crew.length; i++){
+      crewNames.push(this.crew[i]['name'].toLowerCase());
+    }
+    if (!crewNames.includes(memberName.toLowerCase())){
+      this.crew.push({name: memberName, firstMission: isFirst});
+    }
   }
 
   remove(member: object) {

@@ -26,7 +26,8 @@ export class ExperimentsComponent implements OnInit {
   }
 
   save(updatedExperiment: string, experiment: string) {
-    experiment = updatedExperiment;
+    let index = this.experiments.indexOf(experiment);
+    this.experiments[index] = updatedExperiment;
     this.experimentBeingEdited = null;
   }
   
