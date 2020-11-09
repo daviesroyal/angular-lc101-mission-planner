@@ -1,7 +1,13 @@
 <div class="displayBox">
-    <h3>Possible Experiments</h3>
-    <ul>
-      <li *ngFor="let experiment of experiments">{{experiment}}</li>
-    </ul>
+  <h3>Possible Experiments</h3>
+  <ul>
+    <li [class.selected]="chosenExperiments.includes(experiment)"*ngFor="let experiment of experiments" (click)="addExperiment(experiment)">{{experiment}}</li>
+  </ul>
 </div>
 <hr>
+<div class="displayBox">
+  <h3>Chosen Experiments</h3>
+  <ul>
+    <li *ngFor="let item of chosenExperiments">{{item}}</li>
+  </ul>
+</div>
