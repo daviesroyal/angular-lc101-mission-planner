@@ -29,7 +29,7 @@ export class CrewComponent implements OnInit {
     if (!this.crew.includes(candidate) && this.crew.length < 3) {
       this.crew.push(candidate);
       this.inCrew = true;
-    } else {
+    } else if (this.crew.includes(candidate)) {
       this.crew.splice(this.crew.indexOf(candidate), 1);
       this.inCrew = false;
     }
